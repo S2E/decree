@@ -1,0 +1,20 @@
+# Shellcode that sets a register and an arbitrary EIP.
+# mov ebp $gp; mov ebx, $eip; jmp ebx
+*regMask = 0xeeeeeeee*
+*ipMask = 0xeeeeeeee*
+*type 1*
+*gp = EBP*
+*EIP points to executable memory*
+[EIP+0] == 0xbd
+[EIP+1] == $gp[0]
+[EIP+2] == $gp[1]
+[EIP+3] == $gp[2]
+[EIP+4] == $gp[3]
+[EIP+5] == 0xbb
+[EIP+6] == $eip[0]
+[EIP+7] == $eip[1]
+[EIP+8] == $eip[2]
+[EIP+9] == $eip[3]
+[EIP+10] == 0xff
+[EIP+11] == 0xe3
+
