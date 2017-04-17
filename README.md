@@ -15,3 +15,9 @@ Scripts
 -------
 
 Various CGC-related scripts.
+
+
+Samples
+-------
+
+Various pre-compiled CGC binaries that you can use for testing
