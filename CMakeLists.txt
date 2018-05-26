@@ -27,5 +27,4 @@ set(decree_VERSION_PATCH 0)
 set(decree_PACKAGE_VERSION
     "${decree_VERSION_MAJOR}.${decree_VERSION_MINOR}.${decree_VERSION_PATCH}")
 
-add_subdirectory(recipes)
 add_subdirectory(scripts)
